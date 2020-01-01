@@ -13,6 +13,8 @@
 anna@HP-Printer:~$ echo 'echo "hello tset"' > test1
 anna@HP-Printer:~$ cat test1
 echo "hello tset"
+anna@HP-Printer:~$ echo $($(cat test1))
+"hello tset"
 anna@HP-Printer:~$ bash test1
 hello tset
 ```
@@ -21,7 +23,7 @@ hello tset
    * Use chmod command as follows to give execution permission to our script 
 
    ```
-   chmod    +x    shell-script-name 
+   chmod   +x    shell-script-name 
    ```
    OR Syntax: 
    ```
@@ -153,9 +155,9 @@ create a file a.bash with this content:
 select varname in {1..5};
 do
    case $varname in
-      1)  echo one;;
-      2)  echo two;;
-      *)  echo "bigger that two";;  # all other cases
+      1)  echo one;
+      2)  echo two;
+      *)  echo "bigger that two";  # all other cases
    esac
 done
 ```
