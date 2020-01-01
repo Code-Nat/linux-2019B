@@ -126,7 +126,7 @@ i=2
 until test $i -gt 5
 do
 echo $i
-i=$( expr $i + 1 )
+i=$[i + 1]
 done
 ```
 Output:
@@ -142,3 +142,22 @@ Output:
 * Craete a script that gets from the user a number
 * Loop over the number that you got in the previous step
     * each time get from the user a file name - and sum all the lines in the files
+
+
+```bash
+
+echo "Enter num of iterations:"
+read num
+i=0
+sum=0
+while test $i -lt $num
+do
+    echo "Enter path to file"
+    read f
+    rows=$(cat $f|wc -l)
+    i=$[i + 1]
+    sum=$[sum+rows]
+done
+
+echo "total sum of rows is: $sum"
+```
