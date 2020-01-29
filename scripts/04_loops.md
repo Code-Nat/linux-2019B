@@ -161,3 +161,5 @@ done
 
 echo "total sum of rows is: $sum"
 ```
+
+*Note:* a loop can contain `break`

@@ -151,15 +151,26 @@ Non login shells include the following.
 ### select
 create a file a.bash with this content:
 ```bash
-#!/bin/bash
-select varname in {1..5};
-do
-   case $varname in
-      1)  echo one;
-      2)  echo two;
-      *)  echo "bigger that two";  # all other cases
-   esac
-done
+echo -n "Enter number:"
+read num
+case $num in
+
+  1)
+    echo -n "One"
+    ;;
+
+  2)
+    echo -n "TWO"
+    ;;
+
+  3|4)
+    echo -n "THREE OR FOUR"
+    ;;
+
+  *)
+    echo -n "unknown"
+    ;;
+esac
 ```
 run this script:
 ```

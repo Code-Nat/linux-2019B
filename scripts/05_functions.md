@@ -43,7 +43,7 @@ example of running:
 ```
 
 
-## Create a function that get a name of a folder and prints the max depth of this folder
+## Create a function thats get a name of a folder and prints the max depth of this folder
 
 for example:
 if we path "a" as a folder name, and a has the following content:
@@ -78,3 +78,36 @@ f1 "Database-2019A-II" "/*"
 ```
 
 
+
+## Create a function that gets a name of a folder and prints the amount of directories and the amount of the files in this directory
+Create a loop that gets from the user a path and calls this function (the loop runs until the user enters invalid path)
+
+```bash
+mkdir a
+mkdir a/b
+mkdir a/c
+echo hello > a.txt
+echo hello > b/a.txt
+echo hello > b/b.txt
+```
+```bash
+#!/bin/bash
+f1() {
+    dir_amount=$(ls $1 -l | grep -c "^d")
+    file_amount=$(ls $1 -l | grep -c "^-")
+    echo "dir_amount: $dir_amount, file_amount: $file_amount"
+}
+
+while [ 1 -ne 0 ]
+do
+echo "enter a path of a directory: "
+read choice
+ls $choice >> file.log
+if [ $? -ne 0 ]
+then
+break
+fi
+f1 $choice
+done
+
+```
