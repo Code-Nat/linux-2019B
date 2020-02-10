@@ -75,7 +75,7 @@ anna@HP-Printer:~$ test $a = $b ; echo $?
 ```
 * test if `hello` is *equale* to `a`:
 ```
-anna@HP-Printer:~$ test "hello"=$a; echo $?
+anna@HP-Printer:~$ test "hello" = $a; echo $?
 0
 ```
 * test if `d` contains *zero chars*:
